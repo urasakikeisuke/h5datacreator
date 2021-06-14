@@ -16,18 +16,22 @@ class H5Dataset():
         path (str): path of H5Dataset
     """
 
-    def __init__(self, path:str) -> None:
+    def __init__(self, path:str, mode='w') -> None:
         """__init__
 
         Args:
             path (str): path of H5Dataset
+            mode (str): File mode ['w', 'a']
         """
         fullpath = os.path.abspath(path)
 
         if os.path.isdir(os.path.dirname(fullpath)) is False:
             raise NotADirectoryError('Directory "{0}" not found.'.format(os.path.dirname(fullpath)))
 
-        self.__h5file = h5py.File(fullpath, mode='w')
+        if mode not in ['w', 'a']:
+            raise ValueError('"mode" must be "w" or "a".')
+
+        self.__h5file = h5py.File(fullpath, mode=mode)
 
         self.__h5file.create_group(H5_KEY_DATA)
         self.__current_index = -1
@@ -72,7 +76,7 @@ class H5Dataset():
         else:
             data_group = h5_data[str(self.__current_index)]
         return data_group
-    
+
     def get_current_data_index(self) -> int:
         """get_current_data_index
 
@@ -97,7 +101,7 @@ class H5Dataset():
         if data_group is None:
             data_group = h5_data.create_group(str(self.__current_index))
         return data_group
-    
+
     def get_data_group_from_index(self, index:int) -> h5py.Group:
         """get_data_group_from_index
 
@@ -117,7 +121,7 @@ class H5Dataset():
             raise ValueError('Out of range.')
         self.__current_index = index
         return self.__h5file[H5_KEY_DATA + '/' + str(index)]
-    
+
     def get_label_group(self, tag:str) -> h5py.Group:
         """get_label_group
 
