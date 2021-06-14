@@ -507,6 +507,36 @@ def set_depth(h5_group:Union[h5py.Group, h5py.File], tag:str, data:np.ndarray, f
     h5_data.attrs[H5_ATTR_STAMPNSEC] = stamp_nsec
     h5_data.attrs[H5_ATTR_FRAMEID] = frame_id
 
+def set_disparity(h5_group:Union[h5py.Group, h5py.File], tag:str, data:np.ndarray, frame_id:str, base_line:float, stamp_sec:int=0, stamp_nsec:int=0) -> None:
+    """set_disparity
+
+    'disparity'型の画像データを格納する
+
+    Args:
+        h5_group (h5py.Group | h5py.File): 格納するH5Datasetのグループ
+        tag (str): データのタグ
+        data (np.ndarray): shape=(H, W), dtype=np.float32 の画像データ
+        frame_id (str): 座標系
+        base_line (float): ステレオカメラのベースライン[m]
+        stamp_sec (int, optional): タイムスタンプ(整数部[sec]). Defaults to 0.
+        stamp_nsec (int, optional): タイムスタンプ(小数部[nsec]). Defaults to 0.
+
+    Raises:
+        ValueError: if \"data.shape\" is not (H, W).
+        TypeError: if \"data.dtype\" is not \"np.float32\".
+    """
+    if len(data.shape) != 2:
+        raise ValueError('"data.shape" must be (H, W).')
+    dtype:np.dtype = DTYPE_NUMPY[TYPE_DISPARITY]
+    if data.dtype != dtype:
+        raise TypeError('"data.dtype" must be "{}".'.format(str(dtype)))
+    h5_data:h5py.Dataset = h5_group.create_dataset(tag, data=data)
+    h5_data.attrs[H5_ATTR_TYPE] = TYPE_DISPARITY
+    h5_data.attrs[H5_ATTR_STAMPSEC] = stamp_sec
+    h5_data.attrs[H5_ATTR_STAMPNSEC] = stamp_nsec
+    h5_data.attrs[H5_ATTR_FRAMEID] = frame_id
+    h5_data.attrs[H5_ATTR_BASELINE] = base_line
+
 def set_points(h5_group:Union[h5py.Group, h5py.File], tag:str, data:np.ndarray, frame_id:str, stamp_sec:int=0, stamp_nsec:int=0, map_id:str=None) -> None:
     """set_points
 
