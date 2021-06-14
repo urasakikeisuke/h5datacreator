@@ -33,16 +33,23 @@ class H5Dataset():
 
         self.__h5file = h5py.File(fullpath, mode=mode)
 
-        self.__h5file.create_group(H5_KEY_DATA)
-        self.__current_index = -1
+        if isinstance(self.__h5file.get(H5_KEY_DATA), h5py.Group) is False:
+            self.__h5file.create_group(H5_KEY_DATA)
+            self.__current_index = -1
+        else:
+            self.__current_index = 0
 
     def close(self) -> None:
         """close
 
         Close H5Dataset. Be sure to do this on exit.
         """
-        h5_header:h5py.Group = self.__h5file.create_group(H5_KEY_HEADER)
-        h5_header.create_dataset(H5_KEY_LENGTH, data=self.get_maximum_data_index()+1)
+        if isinstance(self.__h5file.get(H5_KEY_HEADER), h5py.Group) is False:
+            h5_header:h5py.Group = self.__h5file.create_group(H5_KEY_HEADER)
+            h5_header.create_dataset(H5_KEY_LENGTH, data=self.get_maximum_data_index()+1)
+        else:
+            h5_header_length:h5py.Dataset = self.__h5file[f'{H5_KEY_HEADER}/{H5_KEY_LENGTH}']
+            h5_header_length[()] = self.get_maximum_data_index()+1
 
         self.__h5file.close()
         self.__current_index = -1
