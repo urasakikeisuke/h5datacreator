@@ -329,7 +329,7 @@ set_semantic1d
   def set_semantic1d(
     h5_group: Union[h5py.Group, h5py.File],
     tag: str,
-    data: np.ndarray,
+    data: numpy.ndarray,
     label_tag: str,
     stamp_sec: int=0,
     stamp_nsec: int=0
@@ -341,7 +341,7 @@ set_semantic1d
 
   * ``h5_group (h5py.Group, h5py.File)``: データを格納するグループ
   * ``tag (str)``: データのタグ
-  * ``data (np.ndarray)``: ``shape=(N,)``, ``dtype=np.uint8`` の1次元ラベルデータ
+  * ``data (numpy.ndarray)``: ``shape=(N,)``, ``dtype=numpy.uint8`` の1次元ラベルデータ
   * ``label_tag (str)``: 依存するラベルのタグ.
   * ``stamp_sec (int, optional)``: データのタイムスタンプ (整数部[sec]). 既定値: ``0`` .
   * ``stamp_nsec (int, optional)``: データのタイムスタンプ (小数部[nsec]). 既定値: ``0`` .
@@ -357,7 +357,7 @@ set_mono8
   def set_mono8(
     h5_group: Union[h5py.Group, h5py.File],
     tag: str,
-    data: np.ndarray,
+    data: numpy.ndarray,
     frame_id: str,
     stamp_sec: int=0,
     stamp_nsec: int=0
@@ -369,7 +369,7 @@ set_mono8
 
   * ``h5_group (h5py.Group, h5py.File)``: データを格納するグループ
   * ``tag (str)``: データのタグ
-  * ``data (np.ndarray)``: ``shape=(H, W)``, ``dtype=np.uint8`` の画像データ
+  * ``data (numpy.ndarray)``: ``shape=(H, W)``, ``dtype=numpy.uint8`` の画像データ
   * ``frame_id (str)``: 座標系
   * ``stamp_sec (int, optional)``: データのタイムスタンプ (整数部[sec]). 既定値: ``0`` .
   * ``stamp_nsec (int, optional)``: データのタイムスタンプ (小数部[nsec]). 既定値: ``0`` .
@@ -382,7 +382,7 @@ set_mono16
   def set_mono16(
     h5_group: Union[h5py.Group, h5py.File],
     tag: str,
-    data: np.ndarray,
+    data: numpy.ndarray,
     frame_id: str,
     stamp_sec: int=0,
     stamp_nsec: int=0
@@ -394,7 +394,7 @@ set_mono16
 
   * ``h5_group (h5py.Group, h5py.File)``: データを格納するグループ
   * ``tag (str)``: データのタグ
-  * ``data (np.ndarray)``: ``shape=(H, W)``, ``dtype=np.uint16`` の画像データ
+  * ``data (numpy.ndarray)``: ``shape=(H, W)``, ``dtype=numpy.uint16`` の画像データ
   * ``frame_id (str)``: 座標系
   * ``stamp_sec (int, optional)``: データのタイムスタンプ (整数部[sec]). 既定値: ``0`` .
   * ``stamp_nsec (int, optional)``: データのタイムスタンプ (小数部[nsec]). 既定値: ``0`` .
@@ -407,7 +407,7 @@ set_bgr8
   def set_bgr8(
     h5_group: Union[h5py.Group, h5py.File],
     tag: str,
-    data: np.ndarray,
+    data: numpy.ndarray,
     frame_id: str,
     stamp_sec: int=0,
     stamp_nsec: int=0
@@ -420,7 +420,7 @@ OpenCVで読み込んだカラー画像の格納に適する.
 
   * ``h5_group (h5py.Group, h5py.File)``: データを格納するグループ
   * ``tag (str)``: データのタグ
-  * ``data (np.ndarray)``: ``shape=(H, W, 3)``, ``dtype=np.uint8`` の画像データ
+  * ``data (numpy.ndarray)``: ``shape=(H, W, 3)``, ``dtype=numpy.uint8`` の画像データ
   * ``frame_id (str)``: 座標系
   * ``stamp_sec (int, optional)``: データのタイムスタンプ (整数部[sec]). 既定値: ``0`` .
   * ``stamp_nsec (int, optional)``: データのタイムスタンプ (小数部[nsec]). 既定値: ``0`` .
@@ -433,7 +433,7 @@ set_rgb8
   def set_rgb8(
     h5_group: Union[h5py.Group, h5py.File],
     tag: str,
-    data: np.ndarray,
+    data: numpy.ndarray,
     frame_id: str,
     stamp_sec: int=0,
     stamp_nsec: int=0
@@ -446,7 +446,7 @@ PILで読み込んだカラー画像の格納に適する.
 
   * ``h5_group (h5py.Group, h5py.File)``: データを格納するグループ
   * ``tag (str)``: データのタグ
-  * ``data (np.ndarray)``: ``shape=(H, W, 3)``, ``dtype=np.uint8`` の画像データ
+  * ``data (numpy.ndarray)``: ``shape=(H, W, 3)``, ``dtype=numpy.uint8`` の画像データ
   * ``frame_id (str)``: 座標系
   * ``stamp_sec (int, optional)``: データのタイムスタンプ (整数部[sec]). 既定値: ``0`` .
   * ``stamp_nsec (int, optional)``: データのタイムスタンプ (小数部[nsec]). 既定値: ``0`` .
@@ -459,7 +459,7 @@ set_bgra8
   def set_bgra8(
     h5_group: Union[h5py.Group, h5py.File],
     tag: str,
-    data: np.ndarray,
+    data: numpy.ndarray,
     frame_id: str,
     stamp_sec: int=0,
     stamp_nsec: int=0
@@ -472,7 +472,7 @@ OpenCVで読み込んだ透過カラー画像の格納に適する.
 
   * ``h5_group (h5py.Group, h5py.File)``: データを格納するグループ
   * ``tag (str)``: データのタグ
-  * ``data (np.ndarray)``: ``shape=(H, W, 4)``, ``dtype=np.uint8`` の画像データ
+  * ``data (numpy.ndarray)``: ``shape=(H, W, 4)``, ``dtype=numpy.uint8`` の画像データ
   * ``frame_id (str)``: 座標系
   * ``stamp_sec (int, optional)``: データのタイムスタンプ (整数部[sec]). 既定値: ``0`` .
   * ``stamp_nsec (int, optional)``: データのタイムスタンプ (小数部[nsec]). 既定値: ``0`` .
@@ -485,7 +485,7 @@ set_rgba8
   def set_rgba8(
     h5_group: Union[h5py.Group, h5py.File],
     tag: str,
-    data: np.ndarray,
+    data: numpy.ndarray,
     frame_id: str,
     stamp_sec: int=0,
     stamp_nsec: int=0
@@ -498,7 +498,7 @@ PILで読み込んだ透過カラー画像の格納に適する.
 
   * ``h5_group (h5py.Group, h5py.File)``: データを格納するグループ
   * ``tag (str)``: データのタグ
-  * ``data (np.ndarray)``: ``shape=(H, W, 4)``, ``dtype=np.uint8`` の画像データ
+  * ``data (numpy.ndarray)``: ``shape=(H, W, 4)``, ``dtype=numpy.uint8`` の画像データ
   * ``frame_id (str)``: 座標系
   * ``stamp_sec (int, optional)``: データのタイムスタンプ (整数部[sec]). 既定値: ``0`` .
   * ``stamp_nsec (int, optional)``: データのタイムスタンプ (小数部[nsec]). 既定値: ``0`` .
@@ -511,7 +511,7 @@ set_depth
   def set_depth(
     h5_group: Union[h5py.Group, h5py.File],
     tag: str,
-    data: np.ndarray,
+    data: numpy.ndarray,
     frame_id: str,
     stamp_sec: int=0,
     stamp_nsec: int=0
@@ -523,7 +523,7 @@ set_depth
 
   * ``h5_group (h5py.Group, h5py.File)``: データを格納するグループ
   * ``tag (str)``: データのタグ
-  * ``data (np.ndarray)``: ``shape=(H, W)``, ``dtype=np.float32`` の画像データ
+  * ``data (numpy.ndarray)``: ``shape=(H, W)``, ``dtype=numpy.float32`` の画像データ
   * ``frame_id (str)``: 座標系
   * ``stamp_sec (int, optional)``: データのタイムスタンプ (整数部[sec]). 既定値: ``0`` .
   * ``stamp_nsec (int, optional)``: データのタイムスタンプ (小数部[nsec]). 既定値: ``0`` .
@@ -536,7 +536,7 @@ set_disparity
   def set_disparity(
     h5_group: Union[h5py.Group, h5py.File],
     tag: str,
-    data: np.ndarray,
+    data: numpy.ndarray,
     frame_id: str,
     base_line: float,
     stamp_sec: int=0,
@@ -549,7 +549,7 @@ set_disparity
 
   * ``h5_group (h5py.Group, h5py.File)``: データを格納するグループ
   * ``tag (str)``: データのタグ
-  * ``data (np.ndarray)``: ``shape=(H, W)``, ``dtype=np.float32`` の画像データ
+  * ``data (numpy.ndarray)``: ``shape=(H, W)``, ``dtype=numpy.float32`` の画像データ
   * ``frame_id (str)``: 座標系
   * ``base_line (float)``: ステレオカメラのベースライン. 単位は画像データの単位と同じにする.
   * ``stamp_sec (int, optional)``: データのタイムスタンプ (整数部[sec]). 既定値: ``0`` .
@@ -563,7 +563,7 @@ set_semantic2d
   def set_semantic2d(
     h5_group: Union[h5py.Group, h5py.File],
     tag: str,
-    data: np.ndarray,
+    data: numpy.ndarray,
     frame_id: str,
     label_tag: str,
     stamp_sec: int=0,
@@ -576,7 +576,7 @@ set_semantic2d
 
   * ``h5_group (h5py.Group, h5py.File)``: データを格納するグループ
   * ``tag (str)``: データのタグ
-  * ``data (np.ndarray)``: ``shape=(H, W)``, ``dtype=np.uint8`` の2次元ラベルデータ
+  * ``data (numpy.ndarray)``: ``shape=(H, W)``, ``dtype=numpy.uint8`` の2次元ラベルデータ
   * ``frame_id (str)``: 座標系
   * ``label_tag (str)``: 依存するラベルのタグ.
   * ``stamp_sec (int, optional)``: データのタイムスタンプ (整数部[sec]). 既定値: ``0`` .
@@ -593,7 +593,7 @@ set_points
   def set_points(
     h5_group: Union[h5py.Group, h5py.File],
     tag: str,
-    data: np.ndarray,
+    data: numpy.ndarray,
     frame_id: str,
     stamp_sec: int=0,
     stamp_nsec: int=0,
@@ -606,7 +606,7 @@ set_points
 
   * ``h5_group (h5py.Group, h5py.File)``: データを格納するグループ
   * ``tag (str)``: データのタグ
-  * ``data (np.ndarray)``: ``shape=(N, 3)``, ``dtype=np.float32`` の点群データ
+  * ``data (numpy.ndarray)``: ``shape=(N, 3)``, ``dtype=numpy.float32`` の点群データ
   * ``frame_id (str)``: 座標系
   * ``stamp_sec (int, optional)``: データのタイムスタンプ (整数部[sec]). 既定値: ``0`` .
   * ``stamp_nsec (int, optional)``: データのタイムスタンプ (小数部[nsec]). 既定値: ``0`` .
@@ -620,7 +620,7 @@ set_voxel_points
   def set_voxel_points(
     h5group: Union[h5py.Group, h5py.File],
     tag: str,
-    data: np.ndarray,
+    data: numpy.ndarray,
     frame_id: str,
     voxel_size: float,
     voxels_min: Tuple[float, float, float],
@@ -640,7 +640,7 @@ https://github.com/shikishima-TasakiLab/pointsmap-python の ``VoxelGridMap`` �
 
   * ``h5_group (h5py.Group, h5py.File)``: データを格納するグループ
   * ``tag (str)``: データのタグ
-  * ``data (np.ndarray)``: VoxelGridMap (``compound(N,)['x', 'y', 'z']`` を格納したNumpy(Z, Y, X)行列)
+  * ``data (numpy.ndarray)``: VoxelGridMap (``compound(N,)['x', 'y', 'z']`` を格納したNumpy(Z, Y, X)行列)
   * ``frame_id (str)``: 座標系
   * ``voxel_size (float)``: Voxelのサイズ
   * ``voxels_min (Tuple[float, float, float])``: VoxelGridMapの範囲の最小値 (z_min, y_min, x_min)
@@ -660,8 +660,8 @@ set_semantic3d
   def set_semantic3d(
     h5_group: Union[h5py.Group, h5py.File],
     tag: str,
-    data_points: np.ndarray,
-    data_semantic1d: np.ndarray,
+    data_points: numpy.ndarray,
+    data_semantic1d: numpy.ndarray,
     frame_id: str,
     label_tag: str,
     stamp_sec: int=0,
@@ -676,8 +676,8 @@ https://github.com/shikishima-TasakiLab/pointsmap-python の ``Points`` デー�
 
   * ``h5_group (h5py.Group, h5py.File)``: データを格納するグループ
   * ``tag (str)``: データのタグ
-  * ``data_points (np.ndarray)``: ``shape=(N, 3)``, ``dtype=np.float32`` の点群データ
-  * ``data_semantic1d (np.ndarray)``: ``shape=(N,)``, ``dtype=np.uint8`` の1次元ラベルデータ
+  * ``data_points (numpy.ndarray)``: ``shape=(N, 3)``, ``dtype=numpy.float32`` の点群データ
+  * ``data_semantic1d (numpy.ndarray)``: ``shape=(N,)``, ``dtype=numpy.uint8`` の1次元ラベルデータ
   * ``frame_id (str)``: 座標系
   * ``label_tag (str)``: 依存するラベルのタグ.
   * ``stamp_sec (int, optional)``: データのタイムスタンプ (整数部[sec]). 既定値: ``0`` .
@@ -692,7 +692,7 @@ set_voxel_semantic3d
   def set_voxel_semantic3d(
     h5group: Union[h5py.Group, h5py.File],
     tag: str,
-    data: np.ndarray,
+    data: numpy.ndarray,
     frame_id: str,
     voxel_size: float,
     voxels_min: Tuple[float, float, float],
@@ -712,7 +712,7 @@ https://github.com/shikishima-TasakiLab/pointsmap-python の ``VoxelGridMap`` �
 
   * ``h5_group (h5py.Group, h5py.File)``: データを格納するグループ
   * ``tag (str)``: データのタグ
-  * ``data (np.ndarray)``: VoxelGridMap (``compound(N,)['x', 'y', 'z']`` を格納したNumpy(Z, Y, X)行列)
+  * ``data (numpy.ndarray)``: VoxelGridMap (``compound(N,)['x', 'y', 'z']`` を格納したNumpy(Z, Y, X)行列)
   * ``frame_id (str)``: 座標系
   * ``voxel_size (float)``: Voxelのサイズ
   * ``voxels_min (Tuple[float, float, float])``: VoxelGridMapの範囲の最小値 (z_min, y_min, x_min)
@@ -735,8 +735,8 @@ set_pose
   def set_pose(
     h5_group: Union[h5py.Group, h5py.File],
     tag: str,
-    data_translation: np.ndarray,
-    data_quaternion: np.ndarray,
+    data_translation: numpy.ndarray,
+    data_quaternion: numpy.ndarray,
     frame_id: str,
     child_frame_id: str,
     stamp_sec: int=0,
@@ -749,8 +749,8 @@ set_pose
 
   * ``h5_group (h5py.Group, h5py.File)``: データを格納するグループ
   * ``tag (str)``: データのタグ
-  * ``data_translation (np.ndarray)``: ``[tx, ty, tz]``, ``dtype=np.float32 or np.float64`` の並進ベクトル (親座標系→子座標系)
-  * ``data_quaternion (np.ndarray)``: ``[qx, qy, qz, qw]``, ``dtype=np.float32 or np.float64`` のクォータニオン (親座標系→子座標系)
+  * ``data_translation (numpy.ndarray)``: ``[tx, ty, tz]``, ``dtype=numpy.float32 or numpy.float64`` の並進ベクトル (親座標系→子座標系)
+  * ``data_quaternion (numpy.ndarray)``: ``[qx, qy, qz, qw]``, ``dtype=numpy.float32 or numpy.float64`` のクォータニオン (親座標系→子座標系)
   * ``frame_id (str)``: 親の座標系
   * ``child_frame_id (str)``: 子の座標系
   * ``stamp_sec (int, optional)``: データのタイムスタンプ (整数部[sec]). 既定値: ``0`` .
@@ -764,7 +764,7 @@ set_translation
   def set_translation(
     h5_group: Union[h5py.Group, h5py.File],
     tag: str,
-    data: np.ndarray,
+    data: numpy.ndarray,
     stamp_sec: int=0,
     stamp_nsec: int=0
   ) -> None:
@@ -775,7 +775,7 @@ set_translation
 
   * ``h5_group (h5py.Group, h5py.File)``: データを格納するグループ
   * ``tag (str)``: データのタグ
-  * ``data (np.ndarray)``: ``[tx, ty, tz]``, ``dtype=np.float32 or np.float64`` の並進ベクトル (親座標系→子座標系)
+  * ``data (numpy.ndarray)``: ``[tx, ty, tz]``, ``dtype=numpy.float32 or numpy.float64`` の並進ベクトル (親座標系→子座標系)
   * ``stamp_sec (int, optional)``: データのタイムスタンプ (整数部[sec]). 既定値: ``0`` .
   * ``stamp_nsec (int, optional)``: データのタイムスタンプ (小数部[nsec]). 既定値: ``0`` .
 
@@ -787,7 +787,7 @@ set_quaternion
   def set_quaternion(
     h5_group: Union[h5py.Group, h5py.File],
     tag: str,
-    data: np.ndarray,
+    data: numpy.ndarray,
     stamp_sec: int=0,
     stamp_nsec: int=0
   ) -> None:
@@ -798,7 +798,7 @@ set_quaternion
 
   * ``h5_group (h5py.Group, h5py.File)``: データを格納するグループ
   * ``tag (str)``: データのタグ
-  * ``data (np.ndarray)``: ``[qx, qy, qz, qw]``, ``dtype=np.float32 or np.float64`` のクォータニオン (親座標系→子座標系)
+  * ``data (numpy.ndarray)``: ``[qx, qy, qz, qw]``, ``dtype=numpy.float32 or numpy.float64`` のクォータニオン (親座標系→子座標系)
   * ``stamp_sec (int, optional)``: データのタイムスタンプ (整数部[sec]). 既定値: ``0`` .
   * ``stamp_nsec (int, optional)``: データのタイムスタンプ (小数部[nsec]). 既定値: ``0`` .
 
