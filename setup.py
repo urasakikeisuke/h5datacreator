@@ -11,7 +11,7 @@ setup(
   license='',
   packages=find_packages(),
   install_requires=[
-    'numpy', 'h5py==2.10.0', 'opencv-python-headless'
+    'numpy', 'h5py', 'opencv-python-headless'
   ],
   python_requires='>=3.6'
 )
