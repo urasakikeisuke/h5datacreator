@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
   name='h5datacreator',
-  version='1.0.0',
+  version='1.1.0',
   description='`http://git-docker.tasakilab:5050/shikishima/h5datacreator`',
   long_description='`http://git-docker.tasakilab:5050/shikishima/h5datacreator`',
   author='Junya Shikishima',
@@ -11,7 +11,7 @@ setup(
   license='',
   packages=find_packages(),
   install_requires=[
-    'numpy', 'h5py', 'opencv-python-headless'
+    'numpy', 'h5py', 'opencv-python-headless==4.2.0.34'
   ],
   python_requires='>=3.6'
 )
